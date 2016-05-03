@@ -48,7 +48,7 @@ class PaginationList extends Component {
       // override the margin-top defined in .pagination class in bootstrap.
       marginTop: '0px'
     };
-
+/*
     const sizePerPageOptions = sizePerPageList.map((_sizePerPage) => {
       return (
         <li key={ _sizePerPage } role='presentation'>
@@ -57,7 +57,7 @@ class PaginationList extends Component {
             onClick={ this.changeSizePerPage }>{ _sizePerPage }</a>
         </li>
       );
-    });
+    });*/
     const total = paginationShowsTotal ? <span>
       Showing rows { (currPage - 1) * sizePerPage + 1 } to&nbsp;
       { Math.min(currPage * sizePerPage, dataSize) } of&nbsp;
@@ -69,24 +69,7 @@ class PaginationList extends Component {
         {
           sizePerPageList.length > 1
           ? <div>
-              <div className='col-md-6'>
-                { total }{ ' ' }
-                <span className='dropdown'>
-                  <button className='btn btn-default dropdown-toggle'
-                    type='button' id='pageDropDown' data-toggle='dropdown'
-                    aria-expanded='true'>
-                    { sizePerPage }
-                    <span>
-                      { ' ' }
-                      <span className='caret'/>
-                    </span>
-                  </button>
-                  <ul className='dropdown-menu' role='menu' aria-labelledby='pageDropDown'>
-                    { sizePerPageOptions }
-                  </ul>
-                </span>
-              </div>
-              <div className='col-md-6'>
+                           <div className='col-md-6'>
                 <ul className='pagination' style={ pageListStyle }>
                   { pageBtns }
                 </ul>
@@ -187,3 +170,4 @@ PaginationList.defaultProps = {
 };
 
 export default PaginationList;
+
